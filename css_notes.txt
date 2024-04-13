@@ -1,0 +1,154 @@
+Selectors:
+HTML elements to which CSS rules apply
+
+- * = universal Selector
+    - will select elements of any type
+    Example:
+        * {
+            color: purple;
+        }
+    - Every element would have the color: purple applied to it
+
+- Type Selectors  
+    - will select all elements of the given element
+    type, and the syntax is just the name of the element
+
+
+- Class Selectors 
+    - Will select all elements with the given Class,
+    which is just an attribute you place on the HTML 
+    element
+    - Example:
+    <!-- index.html -->
+
+    <div class="alert-text">Please agree to our terms of service.</div>
+    /* styles.css */
+
+    .alert-text {
+        color: red;
+    }
+
+
+- ID Selectors
+    - Select an element with the given ID, which is another attribute
+    you place on an HTML element.
+    - Major difference between classes and IDs is that an element can only have 
+    one ID. I cannot be repeated on a single page and should not contain any whitespace
+    Example:
+
+    <!-- index.html -->
+    <div id="title">My Awesome 90's Page</div>
+
+    /* styles.css */
+    #title {
+        background-color: red;
+    }
+
+- Grouping selector 
+    - Can group two selectors together as a comma-separated list
+    Example
+
+    .read,
+    .unread {
+        color: white;
+        background-color: black;
+    }
+
+- Chaining selectors 
+    - Example:
+    original HTML
+    <div>
+        <div class="subsection header">Latest Posts</div>
+        <p class="subsection preview">This is where a preview for a post might go.</p>
+    </div>
+
+    Chaining
+
+    .subsection.header {
+        color: red;
+    }
+
+    - Selects any element that has both the subsection and header
+    classes. 
+
+
+- Descendant combinator
+    - Combinators combine multiple selectors differently than either grouping original
+    chaining them
+    - Four types of Combinators
+    - main one being the descendant combinator, represented in CSS by a single space between
+    selectors
+
+
+- Properties
+    - Color and background color:
+        - color property sets an element's text color
+        - background-color sets the background color of an element
+        - they both accept keywords or HEX, RGB, or HSL values
+
+- Typography basics and text-align
+    - font-family can be a single value or a comma-separated list of values that determine what
+    font an element uses
+        - best practice: family: "Times New Roman", serif;
+    - font-size will set the size of the font
+        - should not contain whitespace: font-size: 22px
+    - font-weight affects the boldness of text 
+        - value can be a keyword: font-weight: bold
+        - or a number from 1-1000
+    - text-align aligns text horizontally within an element
+        - example: text-align: center
+
+- Image height and weight
+    - <img> element's height and weight values will be the same as the acutal image
+    file's height and weight.
+    - To adjust the size of the image without causing it to lose its proportions,
+    you would use a value of "auto" for the height property and adjust the width value
+    -Example:
+
+    img {
+        height: auto;
+        width: 500px;
+    }
+
+    - This would result in a height of 250px
+
+
+- Adding CSS to HTML
+
+    - External CSS
+        - Most common method
+        - Involves creating a separate file for the CSS
+        and linking it inside of an HTML's opening and closign <head> tags with
+        a self-closing <link> element
+        Example:
+
+        <!-- index.html -->
+
+        <head>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+
+        /* styles.css */
+
+        div {
+            color: white;
+            background-color: black;
+        }
+
+        p {
+            color: red;
+        }
+
+- Internal CSS
+    - Adding the CSS within the HTML file itself instead of creating
+    a separate file
+    - all rules inside of a pair of opening and closing <style> tags
+    which are then placed inside of <head> tags of the HTML file
+
+- Inline CSS
+    - Add styles directly to HTML elements
+    - Not recommended
+
+
+
+
